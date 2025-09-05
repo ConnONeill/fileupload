@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 
+# Function to create a parquet file of approx target size in MB in order to test upload limits in uploader.py
+
 def create_parquet_file(filename: str, target_size_mb: int):
     # Estimate rows needed for approx target size
     # 10 columns of float64 ~ 80 bytes per row
