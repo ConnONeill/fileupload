@@ -1,0 +1,157 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #242424;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Centered container with border */
+#root {
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-height: 800px;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* File input styling */
+input[type="file"] {
+  display: inline-block;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem 1rem;
+  border: 2px solid #00ff4c;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #ee2323;
+  cursor: pointer;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  background-color: #00ff62;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #0056b3;
+}
+
+/* Upload button styling */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #28a745;
+  color: #b41a1a;
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s;
+  margin-left: 1rem; /* add space from left element */
+
+}
+
+button:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Success / error messages */
+.success {
+  margin-top: 1rem;
+  color: #28a745;
+  font-weight: 500;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #dc3545;
+  font-weight: 500;
+}
+
+/* Light mode overrides */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  #root {
+    background-color: #f9f9f9;
+    border-color: #007bff;
+  }
+
+  input[type="file"] {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #007bff;
+  }
+
+  input[type="file"]::file-selector-button {
+    background-color: #007bff;
+    color: white;
+  }
+
+  button {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+
+  button:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
