@@ -22,6 +22,7 @@ class FileUploadService:
         if file_path.exists():
             raise HTTPException(status_code=409, detail=f"File: '{file_path}' already exists.")
 
+        # Write file in chunks to avoid memory issues with large files in project container
         total_size = 0
         try:
             with file_path.open("wb") as buffer:
@@ -35,7 +36,7 @@ class FileUploadService:
        
         finally:
             await file.close()
-            #debug message:
+            #debug confirmation message:
             print(f"Wrote {to_megabytes(total_size)} MB to {file_path}")
             
         # returns file name and size in MBs to 2 decimal places.
